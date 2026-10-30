@@ -11,6 +11,10 @@
 		rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+		integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
@@ -47,7 +51,7 @@
 		<section id="portfolio">
 			<div class="projects-title">
 				<h2>Mes Projets</h2>
-				<button class="edit-projects">modifier</button>
+				<button class="edit-projects"><i class="fa-solid fa-pen-to-square"></i> modifier</button>
 			</div>
 			<div class="filters">
 				<button id="filter-all">Tous</button>
@@ -79,11 +83,9 @@
 	</footer>
 	<div class="modal">
 		<div class="modal-content">
-
+			<button class="modal-close" aria-label="Fermer la fenêtre">×</button>
 			<!-- Première vue : galerie -->
 			<div class="modal-gallery-view">
-
-				<button class="modal-close">×</button>
 
 				<h2>Galerie photo</h2>
 
@@ -105,17 +107,36 @@
 
 				<form id="add-work-form">
 
-					<label for="work-image">Photo</label>
+					<div class="upload-zone">
+
+						<i class="fa-regular fa-image upload-icon"></i>
+
+						<label for="work-image" class="upload-button">
+							+ Ajouter photo
+						</label>
+
+						<input type="file" id="work-image" accept=".jpg,.jpeg,.png">
+
+						<p class="upload-info">jpg, png : 4 Mo max</p>
+
+						<img id="image-preview" alt="Aperçu de l'image">
+
+					</div><label for="work-image"></label>
 					<input type="file" id="work-image" accept="image/*">
 					<img id="image-preview" alt="Aperçu de l'image">
+
+
 					<label for="work-title">Titre</label>
 					<input type="text" id="work-title">
 
 					<label for="work-category">Catégorie</label>
-					<select id="work-category">
+					<select id="work-category" required>
+						<option value="" selected disabled></option>
 					</select>
 
-					<button type="submit" id="validate-work" disabled>Valider</button>
+					<div class="form-footer">
+						<button type="submit" id="validate-work" disabled>Valider</button>
+					</div>
 
 				</form>
 

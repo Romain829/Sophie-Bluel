@@ -67,8 +67,9 @@ function displayModalWorks(works) {
     image.src = work.imageUrl;
 
     const deleteButton = document.createElement("button");
-    deleteButton.textContent = "ðŸ—‘";
+    deleteButton.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
     deleteButton.classList.add("delete-work");
+    deleteButton.setAttribute("aria-label", "Supprimer le projet");
 
     deleteButton.addEventListener("click", () => {
 
@@ -141,7 +142,7 @@ fetch("http://localhost:5678/api/works") //fetch() utilise la methode GET par dÃ
 
     filterAll.addEventListener("click", () => {
 
-      displayWorks(works);
+      displayWorks(allWorks);
     });
 
   });
@@ -194,7 +195,7 @@ editProjects.addEventListener("click", () => {
   modal.style.display = "flex";
 
   modalGalleryView.style.display = "block"; // peut etre optionnel, a tester sans
- modalAddView.style.display = "none"; // peut etre optionnel, a tester sans
+  modalAddView.style.display = "none"; // peut etre optionnel, a tester sans
 
 });
 
